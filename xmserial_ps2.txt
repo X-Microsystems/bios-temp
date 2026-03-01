@@ -1,0 +1,26 @@
+;-----------------------------------------------------------------------------
+; XMICRO-SERIAL routines - Overview/Documentation
+; xmserial_ps2.s, xmserial_ps2.inc
+; 2020-06-07
+; **Currently only supports PS/2 keyboards, UARTS are ignored**
+;-----------------------------------------------------------------------------
+
+Files:
+	xmserial_ps2.s		;KEYBOARD-ONLY DRIVER FOR XMICRO-SERIAL
+	xmserial_ps2.inc	;INCLUDE MODULE FOR xmserial_ps2.s
+
+;-----------------------------------------------------------------------------
+
+Special Routines:
+	XMSERIAL_INIT		;INITIALIZATION ROUTINE
+	XMSERIAL_ISR		;INTERRUPT SERVICE ROUTINE
+
+PS/2 Keyboard Functions:
+	PS2_GETKEY		;FETCH THE NEXT KEYCODE FROM THE BUFFER
+	PS2_COMMAND		;SEND A COMMAND TO THE KEYBOARD
+
+;-----------------------------------------------------------------------------
+
+Lookup Tables:
+	ASCII_NORMAL_TABLE	;CONVERT PRINTABLE KEYCODES TO ASCII (LOWER CASE ALPHA)
+	ASCII_SHIFT_TABLE	;CONVERT PRINTABLE KEYCODES TO ASCII (SHIFTED)
